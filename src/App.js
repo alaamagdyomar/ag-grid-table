@@ -53,11 +53,16 @@ function App() {
       addIndex :addIndex,
     })
  },[]);
+// remove selected rows func
+ const removeSelected = useCallback(()=>{
+  var selectedRows = gridRef.current.api.getSelectedRows();
+  gridRef.current.api.applyTransaction({remove:selectedRows})
+ },[])
 
   return (
     <div>
       <button onClick={()=>addRow(undefined)}>adds one Row</button>
-      <button>deleted all </button>
+      <button onClick={removeSelected}>deleted selected</button>
       <div className="ag-theme-alpine" style={{width: 1200, height: 500}}>
         <AgGridReact 
             ref={gridRef}
