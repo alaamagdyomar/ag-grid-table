@@ -1,0 +1,8 @@
+.iconsDiv{
+    display: flex;
+    background-color: transparent;
+}
+
+.iconsDiv span{
+    background-color:transparent;
+}
